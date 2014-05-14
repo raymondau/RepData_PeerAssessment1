@@ -1,7 +1,9 @@
-Peer Assessment 1: Analysing A Person's Activities Through Numbers of Steps Taken
-=================================================================================
+Reproduceable Research Peer Assessment 1
+========================================
+Analysing A Person's Activities Through Numbers of Steps Taken
+==============================================================
 
-This assignment makes use of data from a personal activity monitoring device. This device collects data at 5 minute intervals through out the day. The data consists of two months of data from an anonymous individual collected during the months of October and November, 2012 and include the number of steps taken in 5 minute intervals each day.
+This assignment makes use of data from a personal activity monitoring device. This device collects data at 5 minute intervals through out the day. The data consists of two months of data from an anonymous individual collected during the months of October and November, 2012 and includes the number of steps taken in 5 minute intervals each day.
 
 First we read the file "activity.csv" and set the column classes.
 
@@ -9,7 +11,7 @@ First we read the file "activity.csv" and set the column classes.
 af <- read.csv("activity.csv", colClasses=c("integer","Date","integer"),header=TRUE)
 ```
 
-We then sum the steps by date into a data frame steps.date with column names "date", "x". We then convert steps.date to a table so that the histogram can be created.
+We then sum the steps by date into a data frame steps.date with column names "date", "x". We then convert steps.date to a table, steps.table, so that the histogram can be created.
 
 ```{r}
 steps.date <- aggregate(af$steps, by=list(date=af$date), FUN=sum)
@@ -161,9 +163,9 @@ xyplot(x ~ interval | days, data=combined.steps.interval, type="l", layout=c(1,2
 
 Analysis of weekends versus weekdays mean number of steps taken over 5-minutes intervals:
 
-    From the graph, we see that the subject walked more on average during the weeknds than weekdays, especially in the afternoon and evening (1200-2200). I would imagine more outdoor activities were done during those periods.
+    From the graph, we see that the subject walked more on average during the weekends than weekdays during the afternoon and evening period (1200-2200). On eexplanation could be more outdoor activities were done during this period of time.
 
-    In contrast, the subject walked the most around 8am durign weekdays and this I assumed to be his/her walking to the place of work. The subject walked less during working hours (0900-1800) and this could be the nature of the work that impose a more sedatory lifestyle during this period of time. 
+    In contrast, the subject walked the most around 8am during weekdays and this I assumed to be his/her walking to the place of work. The subject walked less during working hours (0900-1800) and this could be the nature of the work that impose a more sedatory lifestyle during this period of time. 
 
-    The above acitivty pattern is typical among modern office workers whereby on average, people walked more during the weekends than weekdays.
+    The above activity pattern is typical among modern office workers whereby on average, people walked more during the weekends than weekdays.
     
