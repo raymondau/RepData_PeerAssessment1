@@ -1,4 +1,4 @@
-Reproduceable Research Peer Assessment 1
+Reproduceable Research Peer Assessment 1 
 ========================================
 Analysing A Person's Activities Through Numbers of Steps Taken
 ==============================================================
